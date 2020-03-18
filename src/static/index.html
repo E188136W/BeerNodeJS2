@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BeerNodeJS</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/materializeDesign/css/materialize.css"
+    />
+    <link rel="stylesheet" href="assets/vendor/Vuetify/vuetify.min.css" />
+  </head>
+  <body>
+    <h1>API Rest & Communication WebSocket</h1>
+    <div id="tchat-global">
+      <form @submit.prevent="onEditorInput">
+        <input v-model="message" type="text" />
+        <input type="submit" />
+      </form>
+
+      <ul>
+        <li v-for="message in allMessage">
+          {{ message }}
+        </li>
+      </ul>
+    </div>
+
+    <!--<ckeditor @input="onEditorInput" :editor="editor" v-model="editorData"
+                              :config="editorConfig"></ckeditor>-->
+
+    <script type="module" src="assets/vendor/VueJS/vue.min.js"></script>
+    <script type="module" src="assets/vendor/Vuetify/vuetify.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="assets/js/tchat-global.js"></script>
+  </body>
+</html>
